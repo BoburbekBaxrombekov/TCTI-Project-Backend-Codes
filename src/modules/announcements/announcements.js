@@ -19,7 +19,8 @@ module.exports = {
                 body_ru,
                 title_en,
                 body_en,
-                date
+                date,
+                sort
             } = req.body
             await newAnnouncement(
                 img,
@@ -29,7 +30,8 @@ module.exports = {
                 body_ru,
                 title_en,
                 body_en,
-                date
+                date,
+                sort
                 )
             res.send("ok")
         } catch(err) {

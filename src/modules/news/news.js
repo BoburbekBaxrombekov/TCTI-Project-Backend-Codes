@@ -4,14 +4,23 @@ module.exports = {
     GET: async(req, res) => {
         try {
             const news = await allNews()
-            res.send(news.reverse())
+            const sortedArray = news.sort((a, b) => {
+                if (a.date > b.date) {
+                    return -1;
+                  }
+                  if (a.date < b.date) {
+                    return 1;
+                  }
+                  return 0;
+            })
+            res.send(sortedArray)
         } catch(err) {
             console.log(err.message)
         }
     },
     POST: async(req, res) => {
         try {
-            const new_news = await newNews(req.body.img, req.body.title_uz, req.body.body_uz, req.body.title_ru, req.body.body_ru, req.body.title_en, req.body.body_en, req.body.date)
+            const new_news = await newNews(req.body.img, req.body.title_uz, req.body.body_uz, req.body.title_ru, req.body.body_ru, req.body.title_en, req.body.body_en, req.body.date, req.body.sort)
             res.send('ok')
         } catch(err) {
             console.log(err.message)

@@ -1,5 +1,5 @@
 const PG = {
-    connectionString: 'postgres://ixitkovd:N6k0GUgKbSWIlgVyiVJRe81YRDhY6-gw@raja.db.elephantsql.com/ixitkovd'
+    connectionString: 'postgres://sneykpwq:ydn9JpHOpXdpy18uDcY7e_nK2dtly3m4@jelani.db.elephantsql.com/sneykpwq'
 
 }
 

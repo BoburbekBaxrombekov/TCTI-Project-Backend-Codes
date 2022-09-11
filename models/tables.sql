@@ -7,7 +7,8 @@ CREATE TABLE news(
     body_ru text,
     title_en text,
     body_en text,
-    date text
+    date text,
+    sort text
 );
 
 CREATE TABLE announcements(
@@ -19,7 +20,8 @@ CREATE TABLE announcements(
     body_ru text,
     title_en text,
     body_en text,
-    date text
+    date text,
+    sort text
 );
 
 CREATE TABLE sections(
