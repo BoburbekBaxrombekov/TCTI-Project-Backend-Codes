@@ -4,7 +4,16 @@ module.exports = {
     GET: async(req, res) => {
         try{
             const announcements = await allAnnouncements()
-            res.send(announcements.reverse())
+            const sortedArray = announcements.sort((a, b) => {
+                if (a.date > b.date) {
+                    return -1;
+                  }
+                  if (a.date < b.date) {
+                    return 1;
+                  }
+                  return 0;
+            })
+            res.send(sortedArray)
         } catch(err) {
             console.log(err.message)
         }
